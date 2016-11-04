@@ -1,0 +1,134 @@
+@import "reset.css";
+
+/*clearfix*/
+.clearfix:before, .clearfix:after{
+    content: " ";
+    display: table;
+}
+
+.clearfix:after{
+    clear: both;
+}
+/*shelf centering*/
+html,body {
+    height: 100%;
+    min-height: 100%;
+}
+
+#wrapper{
+    width: 100%;
+    min-width: 1100px;
+    min-height: 100%;
+    background: url(../img/bg.jpg) center 0 no-repeat;
+    background-size: cover;
+    
+    position: relative;
+}
+/*shelf*/
+#shelf{
+    box-sizing: border-box;
+    width: 1020px;
+    height: 205px;
+
+    outline: 1px dashed red;
+    background: url(../img/shelf_l.png) 0 100% no-repeat,
+                url(../img/shelf_c.png) 50% 100% no-repeat,
+                url(../img/shelf_r.png) 100% 100% no-repeat;
+    position: relative;
+}
+/*container for shelf items*/
+#shelf-items-box{
+    width:932px;
+    height:120px;
+    position: absolute;
+    top: 67px;
+    left: 44px;
+}
+/*sortable elements*/
+#sortable{
+    padding-left: 30px;
+}
+
+#sortable > div { float: left; }
+
+.shelf-item{
+    width: 110px;
+    height: 120px;
+    box-sizing: border-box;
+    margin-right: 40px;
+    cursor: pointer;
+    position: relative; /*for tooltip*/
+}
+
+.bear{
+    height: 145px !important;
+}
+
+#draggable1{
+    background: url(../img/obj1.png) 50% 100% no-repeat;
+}
+#draggable2{
+    background: url(../img/obj2.png) 50% 100% no-repeat;
+    background-size: contain;
+}
+#draggable3{
+    background: url(../img/obj3.png) 50% 100% no-repeat;
+    background-size: contain;
+}
+#draggable4{
+    background: url(../img/obj4.png) 50% 100% no-repeat;
+}
+#draggable5{
+    background: url(../img/obj5.png) 50% 100% no-repeat;
+}
+#draggable6{
+    background: url(../img/obj6.png) 50% 100% no-repeat;
+}
+
+/* Tooltip text */
+.shelf-item .tooltiptext {
+    visibility: hidden;
+    width: 130px;
+    background-color: #cdd1da;
+    color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font: 0.9em Verdana, Geneva sans-serif;
+    font-weight: bold;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s;
+}
+/* Tooltip arrow */
+.shelf-item .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #cdd1da transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.shelf-item:hover .tooltiptext {
+    visibility: visible;
+    opacity: 0.7;
+}
+
+/*correction of tooltip's porition*/
+#pos-correct{
+    left: 42%;
+}
+
+
+
