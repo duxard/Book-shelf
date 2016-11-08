@@ -9,10 +9,14 @@
 .clearfix:after{
     clear: both;
 }
+
 /*shelf centering*/
 html,body {
     height: 100%;
     min-height: 100%;
+/*    default font settings*/
+    font-family: Verdana, Geneva sans-serif;
+    font-weight: bold;
 }
 
 #wrapper{
@@ -21,20 +25,40 @@ html,body {
     min-height: 100%;
     background: url(../img/bg.jpg) center 0 no-repeat;
     background-size: cover;
-    
     position: relative;
+}
+/*logo*/
+#logo{
+    width: 169px;
+    height: 25px;
+    background: url(../img/logo.png) 0 0 no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+#test-page{
+    color: rgba(191,191,191,.51);
+    text-transform: uppercase;
+    font-size: .7em;
+    position: absolute;
+    top: 7%;
+    right: 5%;
 }
 /*shelf*/
 #shelf{
     box-sizing: border-box;
     width: 1020px;
     height: 205px;
-
-    outline: 1px dashed red;
     background: url(../img/shelf_l.png) 0 100% no-repeat,
                 url(../img/shelf_c.png) 50% 100% no-repeat,
                 url(../img/shelf_r.png) 100% 100% no-repeat;
     position: relative;
+    -webkit-box-shadow: 0px 47px 28px -20px rgba(0, 0, 0, 0.68);
+    -moz-box-shadow: 0px 47px 28px -20px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 47px 28px -20px rgba(0, 0, 0, 0.68);
+    
 }
 /*container for shelf items*/
 #shelf-items-box{
@@ -57,7 +81,7 @@ html,body {
     box-sizing: border-box;
     margin-right: 40px;
     cursor: pointer;
-    position: relative; /*for tooltip*/
+    position: relative; /*for tooltip & dropdown menu */
 }
 
 .bear{
@@ -67,6 +91,7 @@ html,body {
 #draggable1{
     background: url(../img/obj1.png) 50% 100% no-repeat;
 }
+
 #draggable2{
     background: url(../img/obj2.png) 50% 100% no-repeat;
     background-size: contain;
@@ -94,8 +119,8 @@ html,body {
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-    font: 0.9em Verdana, Geneva sans-serif;
-    font-weight: bold;
+    font-size: 1em;
+
     /* Position the tooltip text */
     position: absolute;
     z-index: 1;
@@ -129,6 +154,86 @@ html,body {
 #pos-correct{
     left: 42%;
 }
+
+/*dropdown menu*/
+
+.dropdown-content {
+    display: none;
+    box-sizing: border-box;
+    padding: 10px 0;
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    background: url(../img/hover_menu1.png) 0 0 repeat-y;
+
+    min-width: 200px;
+    font-size: 0.9em;
+/*    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 7px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: url(../img/hover_menu.png) 0 0 repeat-y;
+    color: #fefefe;
+}
+.dropdown-content::after{
+    content: "";
+    position: absolute;
+    top: -7%;
+    left: 17%;
+    margin-left: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent transparent rgba(191, 191, 191, 0.64) transparent;
+}    
+
+.open-menu{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
